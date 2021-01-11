@@ -8,7 +8,11 @@ int main(void)
 	int a;
 	int fd;
 
-	fd = open("text2.txt", O_RDONLY);
+	fd = open("text.txt", O_RDONLY);
 	a = get_next_line(fd, &line);
-	printf("%s\n\n%d\n", line, a);
+	while (a)
+	{
+		printf("%s\n\n%d\n", line, a);
+		a = get_next_line(fd, &line);
+	}
  }
